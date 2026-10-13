@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- スマホ対応（レスポンシブ表示）に必要な設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リマインダー</title>
+  <!-- CSSファイルを読み込む設定 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>リマインダー</h1>
+
+    <!-- 入力エリア -->
+    <section class="form-section">
+      <h2>新しく追加</h2>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="task-title">内容</label>
+          <input type="text" id="task-title"required>
+        </div>
+        <div class="form-group">
+          <label for="course-name">タイトル</label>
+          <input type="text" id="course-name"  required>
+        </div>
+
+<div class="form-group">
+  <label for="due-date">期限</label>
+  <input type="datetime-local" id="due-date"> 
+</div>
+<!-- 定期の設定（シンプルにチェックボックスだけに！） -->
+        <div class="form-group checkbox-group">
+          <label>
+            <input type="checkbox" id="is-recurring"> 毎週繰り返す
+          </label>
+        </div>
+        <button type="submit" id="add-btn">追加する</button>
+      </form>
+    </section>
+<!-- 通知を有効にするボタン -->
+<button id="notify-btn" onclick="requestNotificationPermission()">🔔 通知を受け取る</button>
+    <!-- 一覧表示エリア -->
+    <section class="list-section">
+      <h2>一覧</h2>
+      <ul id="task-list">
+        <!-- ここにJavaScriptで追加された題が自動で入ります -->
+      </ul>
+    </section>
+  </div>
+
+  <!-- JavaScriptファイルを読み込む設定 -->
+  <script src="script.js"></script>
+</body>
+</html>
